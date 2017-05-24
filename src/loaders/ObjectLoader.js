@@ -50,6 +50,7 @@ import { MaterialLoader } from './MaterialLoader';
 import { BufferGeometryLoader } from './BufferGeometryLoader';
 import { JSONLoader } from './JSONLoader';
 import { FileLoader } from './FileLoader';
+import { TextGeometry } from '../geometries/TextGeometry';
 import * as Geometries from '../geometries/Geometries';
 
 /**
@@ -314,6 +315,15 @@ Object.assign( ObjectLoader.prototype, {
 							data.segments,
 							data.phiStart,
 							data.phiLength
+						);
+
+						break;
+
+					case 'TextGeometry':
+
+						geometry = new TextGeometry(
+							data.text,
+							data.data
 						);
 
 						break;
