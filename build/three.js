@@ -37056,6 +37056,15 @@
 
 							break;
 
+						case 'TextGeometry':
+
+							geometry = new TextGeometry(
+								data.text,
+								data.data
+							);
+
+							break;
+
 						case 'BufferGeometry':
 
 							geometry = bufferGeometryLoader.parse( data );

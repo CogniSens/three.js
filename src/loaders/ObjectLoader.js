@@ -51,6 +51,7 @@ import { MaterialLoader } from './MaterialLoader.js';
 import { BufferGeometryLoader } from './BufferGeometryLoader.js';
 import { JSONLoader } from './JSONLoader.js';
 import { FileLoader } from './FileLoader.js';
+import { TextGeometry } from '../geometries/TextGeometry';
 import * as Geometries from '../geometries/Geometries.js';
 
 /**
@@ -372,6 +373,15 @@ Object.assign( ObjectLoader.prototype, {
 						geometry = new Geometries[ data.type ](
 							geometryShapes,
 							data.curveSegments
+						);
+
+						break;
+
+					case 'TextGeometry':
+
+						geometry = new TextGeometry(
+							data.text,
+							data.data
 						);
 
 						break;
